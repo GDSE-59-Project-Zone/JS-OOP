@@ -4,6 +4,6 @@
  **/
 
 var customers = [];
-var item = [];
-var order = [];
+var items = [];
+var orders = [];
 
