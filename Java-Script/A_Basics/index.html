@@ -728,21 +728,21 @@
     //So what we can do with objects
 
     //can we change values after defined..?
-    var customer={
-        id:"C001",
-        name:'Kasun'
-    }
+    // var customer={
+    //     id:"C001",
+    //     name:'Kasun'
+    // }
 
     //change values
-    customer.id="C002"; // yes we can change values
+    // customer.id="C002"; // yes we can change values
 
     //can we add new properties to the object..?
-    customer.age=20; // yes we can
+    // customer.age=20; // yes we can
 
     //can we delete properties after defined.?
-    delete customer.id; // yes we can
+    // delete customer.id; // yes we can
 
-    Object.keys(customer); // return all the property names inside an object
+    // Object.keys(customer); // return all the property names inside an object
 
 
     //Then how to stop these.? and how to manage them as we wanted
@@ -751,112 +751,161 @@
     //enumerable
     //configurable
 
-    //So how to view the property descriptors of a property
-    Object.getOwnPropertyDescriptor(customer,'age');
-    // {value: 20, writable: true, enumerable: true, configurable: true}
+    // //So how to view the property descriptors of a property
+    // Object.getOwnPropertyDescriptor(customer,'age');
+    // // {value: 20, writable: true, enumerable: true, configurable: true}
+    //
+    //
+    // Object.defineProperty(customer,'age',{
+    //     writable:false
+    // });
+    //
+    // //now try to change age value
+    // customer.age//20
+    // customer.age=30;
+    // customer.age//20 not changed. so now this is a read only value
+    //
+    //
+    // //let's change property descriptors
+    // //writable
+    // // we can handle the value state to read only and to opposite
+    // //how to change
+    // Object.defineProperty(customer,'age',{
+    //     writable:false
+    // });
+    //
+    //
+    // //enumerable
+    // //can stop the key visibility
+    // Object.defineProperty(customer,'age',{
+    //     enumerable:false
+    // });
+    // Object.keys(customer);// age will not count here after changing the enumerable to false
+    //
+    //
+    // //configurable
+    // //can stop the property removing
+    // Object.defineProperty(customer,'age',{
+    //     configurable:false //changing age to non-configurable state
+    // });
+    // //after this we are not allowed to change any property descriptor
+    //
+    // //Note :- But if writable was true we have one chance to change it after
+    // //setting configurable to false
+    //
+    //
+    // //There are two types of properties in JS Objects
+    // //Data Properties
+    // //Accessor Properties
+    //
+    // var item={
+    //     code:'I00-001' // if the value is directly assigned
+    //     //to a key(property) it is known as data property
+    // }
+    // //value : I00-001
+    // //enumerable : true
+    // //writable : true
+    // //configurable : true
+    //
+    // //Accessor Property
+    // //If there is no value assigned while creating the
+    // //property and also if we have to use getters and setter
+    // //to set values for the property, those properties are known
+    // //as Accessor Properties
+    // Object.defineProperty(item,'name',{
+    //     get(){
+    //         return name;
+    //     },
+    //     set(v){
+    //         name=v;
+    //     }
+    // });
+    //
+    // //What are the property descriptors available in accessor properties
+    // //get()
+    // //set()
+    // //configurable:false
+    // //enumerable:false
+    //
+    // //What about
+    // //Writable.? (without a value there is no read only state also)
+    // //value.? (there is no direct value for accessor properties)
+    //
+    // Object.defineProperty(item,'qty',{
+    //     get(){
+    //         return qty;
+    //     },
+    //     set(newValue){
+    //         qty=newValue;
+    //     },
+    //     enumerable:true,
+    //     configurable:true
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(item,'qty');
+    // // {enumerable: true, configurable: true, get: ƒ, set: ƒ}
+    //
+    //
+    // Object.defineProperty(order,'customerID',{
+    //     get(){
+    //         return customerID;
+    //     },
+    //     set(newValue){
+    //         customerID=newValue;
+    //     },
+    //     enumerable:true,
+    //     configurable:true,
+    //     writable:true // error, writable is not allowed in accessor properties
+    // });
 
 
-    Object.defineProperty(customer,'age',{
-        writable:false
-    });
-
-    //now try to change age value
-    customer.age//20
-    customer.age=30;
-    customer.age//20 not changed. so now this is a read only value
-
-
-    //let's change property descriptors
-    //writable
-    // we can handle the value state to read only and to opposite
-    //how to change
-    Object.defineProperty(customer,'age',{
-        writable:false
-    });
-
-
-    //enumerable
-    //can stop the key visibility
-    Object.defineProperty(customer,'age',{
-        enumerable:false
-    });
-    Object.keys(customer);// age will not count here after changing the enumerable to false
-
-
-    //configurable
-    //can stop the property removing
-    Object.defineProperty(customer,'age',{
-        configurable:false //changing age to non-configurable state
-    });
-    //after this we are not allowed to change any property descriptor
-
-    //Note :- But if writable was true we have one chance to change it after
-    //setting configurable to false
-
-
-    //There are two types of properties in JS Objects
-    //Data Properties
-    //Accessor Properties
-
-    var item={
-        code:'I00-001' // if the value is directly assigned
-        //to a key(property) it is known as data property
+    //Functional Base Objects
+    var  customer={
+        id:"C001",
+        name:"Dasun"
     }
-    //value : I00-001
-    //enumerable : true
-    //writable : true
-    //configurable : true
 
-    //Accessor Property
-    //If there is no value assigned while creating the
-    //property and also if we have to use getters and setter
-    //to set values for the property, those properties are known
-    //as Accessor Properties
-    Object.defineProperty(item,'name',{
-        get(){
-            return name;
-        },
-        set(v){
-            name=v;
+    //this is a function
+    function Customer(){
+        this.id="C001";
+        this.name="Kasun";
+    }
+
+    // then we can create an object using function
+    var cc= new Customer(); // here cc is the object
+    // because it was created with the help of Customer function
+    // It is called as functional object
+
+
+    function Item(code,name){
+        this.code=code;
+        this.name=name;
+    }
+    var item1= new Item("I001","Lux");
+    var item2= new Item("I002","Signal");
+    //So we can create objects using Item function
+    // As a convention if we write a function for an object the first
+    //letter is replaced as an object
+
+
+
+    //How to set method for an Object
+    //Literal Base Objects
+    var calculateObject={
+        a:100,
+        b:200,
+        calculateTotal:function (){
+            return this.a+this.b;
         }
-    });
 
-    //What are the property descriptors available in accessor properties
-    //get()
-    //set()
-    //configurable:false
-    //enumerable:false
+    }
+    calculateObject.calculateTotal();
 
-    //What about
-    //Writable.? (without a value there is no read only state also)
-    //value.? (there is no direct value for accessor properties)
+    calculateObject.calculateTotalTwo=function(value) {
+        return this.a + this.b + value;
+    }
 
-    Object.defineProperty(item,'qty',{
-        get(){
-            return qty;
-        },
-        set(newValue){
-            qty=newValue;
-        },
-        enumerable:true,
-        configurable:true
-    });
-
-    Object.getOwnPropertyDescriptor(item,'qty');
-    // {enumerable: true, configurable: true, get: ƒ, set: ƒ}
-
-
-    Object.defineProperty(order,'customerID',{
-        get(){
-            return customerID;
-        },
-        set(newValue){
-            customerID=newValue;
-        },
-        enumerable:true,
-        configurable:true,
-        writable:true // error, writable is not allowed in accessor properties
-    });
+    calculateObject.calculateTotalTwo(200);
 
 
 
