@@ -733,7 +733,7 @@
         name:'Kasun'
     }
 
-    //chanage values
+    //change values
     customer.id="C002"; // yes we can change values
 
     //can we add new properties to the object..?
@@ -742,9 +742,20 @@
     //can we delete properties after defined.?
     delete customer.id; // yes we can
 
+    Object.keys(customer); // return all the property names inside an object
+
 
     //Then how to stop these.? and how to manage them as we wanted
     //To do this we have property descriptors
+    //Writable
+    //enumerable
+    //configurable
+
+    //So how to view the property descriptors of a property
+    Object.getOwnPropertyDescriptor(customer,'age');
+    // {value: 20, writable: true, enumerable: true, configurable: true}
+
+
     Object.defineProperty(customer,'age',{
         writable:false
     });
@@ -753,6 +764,40 @@
     customer.age//20
     customer.age=30;
     customer.age//20 not changed. so now this is a read only value
+
+
+    //let's change property descriptors
+    //writable
+    // we can handle the value state to read only and to opposite
+    //how to change
+    Object.defineProperty(customer,'age',{
+        writable:false
+    });
+
+
+    //enumerable
+    //can stop the key visibility
+    Object.defineProperty(customer,'age',{
+        enumerable:false
+    });
+    Object.keys(customer);// age will not count here after changing the enumerable to false
+
+
+    //configurable
+    //can stop the property removing
+    Object.defineProperty(customer,'age',{
+        configurable:false //changing age to non-configurable state
+    });
+    //after this we are not allowed to change any property descriptor
+
+    //Note :- But if writable was true we have one chance to change it after
+    //setting configurable to false
+
+
+
+
+
+
 
 
 
