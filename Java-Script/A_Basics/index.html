@@ -743,6 +743,17 @@
     delete customer.id; // yes we can
 
 
+    //Then how to stop these.? and how to manage them as we wanted
+    //To do this we have property descriptors
+    Object.defineProperty(customer,'age',{
+        writable:false
+    });
+
+    //now try to change age value
+    customer.age//20
+    customer.age=30;
+    customer.age//20 not changed. so now this is a read only value
+
 
 
 
