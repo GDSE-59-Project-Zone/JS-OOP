@@ -921,8 +921,32 @@
     calculateObject.calculateTotalTwo(200);
 
 
+    //Create an Object called Car (Functional Base)
+    //Create two properties, Make,Model
+    //Create a function called set details and set two parameters for initializing
+    //Make and Model
+    //Create a function called park();
+    //After set data park method should be called and return type should be as
+    //follows
 
+    //setData("Benz","2022");
+    //park(); // Benz 2022 is parking at 202 parking slot
 
+    function Car(){
+        this.make="";
+        this.year="";
+        this.setDetails=function(m,y){
+            this.make=m;
+            this.year=y;
+        };
+        this.park=function(){
+            console.log(`${this.make} ${this.year} is parking at 202 parking slot`)
+        }
+    }
+
+    var c= new Car();
+    c.setDetails("Ford","2022");
+    c.park();
 
 
 
