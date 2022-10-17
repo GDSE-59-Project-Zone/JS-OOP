@@ -714,15 +714,36 @@
 
     //how to use a object and copy its value to a new one
 
+    // var customer={
+    //     id:'C001'
+    // }
+    //
+    // var customers=[];
+    //
+    // var cloneOfCustomer=Object.assign({},customer);
+    //
+    // customer.id='C002'
+
+
+    //So what we can do with objects
+
+    //can we change values after defined..?
     var customer={
-        id:'C001'
+        id:"C001",
+        name:'Kasun'
     }
 
-    var customers=[];
+    //chanage values
+    customer.id="C002"; // yes we can change values
 
-    var cloneOfCustomer=Object.assign({},customer);
+    //can we add new properties to the object..?
+    customer.age=20; // yes we can
 
-    customer.id='C002'
+    //can we delete properties after defined.?
+    delete customer.id; // yes we can
+
+
+
 
 
 
