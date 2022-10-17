@@ -691,27 +691,38 @@
 
 
 
+// function
+//     // Object to Continue
+//     //Literal Base Object
+//     var myOb={
+//         id:"C001", // key value pairs
+//         name:"Kasun"
+//     }
+//
+//     console.log(myOb);
+//     //don notation and  bracket notation
+//     //how to get values form an object
+//     myOb.id;// C001
+//     myOb.name//Kasun
+//
+//     //can we change C001 to C00-001
+//     myOb.id='C00-001';
+//     myOb.name='Akila';
+//
+//     console.log(myOb);
 
-    // Object to Continue
-    //Literal Base Object
-    var myOb={
-        id:"C001", // key value pairs
-        name:"Kasun"
+
+    //how to use a object and copy its value to a new one
+
+    var customer={
+        id:'C001'
     }
 
-    console.log(myOb);
-    //don notation and  bracket notation
-    //how to get values form an object
-    myOb.id;// C001
-    myOb.name//Kasun
+    var customers=[];
 
-    //can we change C001 to C00-001
-    myOb.id='C00-001';
-    myOb.name='Akila';
+    var cloneOfCustomer=Object.assign({},customer);
 
-    console.log(myOb);
-
-
+    customer.id='C002'
 
 
 
