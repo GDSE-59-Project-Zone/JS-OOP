@@ -899,6 +899,19 @@
         }
 
     }
+
+    function CalculateFun(){
+      this.a=100;
+      this.b=200;
+      this.calculateTotal=function (){
+          return this.a+this.b;
+      }
+    }
+
+    var m= new CalculateFun();
+    m.calculateTotal();
+
+
     calculateObject.calculateTotal();
 
     calculateObject.calculateTotalTwo=function(value) {
