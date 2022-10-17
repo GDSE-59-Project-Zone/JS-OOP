@@ -794,6 +794,60 @@
     //setting configurable to false
 
 
+    //There are two types of properties in JS Objects
+    //Data Properties
+    //Accessor Properties
+
+    var item={
+        code:'I00-001' // if the value is directly assigned
+        //to a key(property) it is known as data property
+    }
+    //value : I00-001
+    //enumerable : true
+    //writable : true
+    //configurable : true
+
+    //Accessor Property
+    //If there is no value assigned while creating the
+    //property and also if we have to use getters and setter
+    //to set values for the property, those properties are known
+    //as Accessor Properties
+    Object.defineProperty(item,'name',{
+        get(){
+            return name;
+        },
+        set(v){
+            name=v;
+        }
+    });
+
+    //What are the property descriptors available in accessor properties
+    //get()
+    //set()
+    //configurable:false
+    //enumerable:false
+
+    //What about
+    //Writable.? (without a value there is no read only state also)
+    //value.? (there is no direct value for accessor properties)
+
+    Object.defineProperty(item,'qty',{
+        get(){
+            return qty;
+        },
+        set(newValue){
+            qty=newValue;
+        },
+        enumerable:true,
+        configurable:true
+    });
+
+    Object.getOwnPropertyDescriptor(item,'qty');
+    // {enumerable: true, configurable: true, get: ƒ, set: ƒ}
+
+
+
+
 
 
 
