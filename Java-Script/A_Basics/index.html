@@ -846,6 +846,18 @@
     // {enumerable: true, configurable: true, get: ƒ, set: ƒ}
 
 
+    Object.defineProperty(order,'customerID',{
+        get(){
+            return customerID;
+        },
+        set(newValue){
+            customerID=newValue;
+        },
+        enumerable:true,
+        configurable:true,
+        writable:true // error, writable is not allowed in accessor properties
+    });
+
 
 
 
