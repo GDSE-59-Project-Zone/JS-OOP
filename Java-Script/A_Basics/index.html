@@ -1071,29 +1071,60 @@
 
 
     // Second implementation
-    function Car(){}
+    // function Car(){}
+    //
+    // function Vehicle(){}
+    //
+    // //create new car prototype under Vehicle Prototype
+    // Car.prototype=Object.create(Vehicle.prototype);
+    //
+    // Car.prototype.constructor=Car;
+    //
+    // Vehicle.prototype.make="Toyota"
+    //
+    // var v1= new Vehicle();
+    //
+    // v1.make;
+    //
+    // var c1= new Car();
+    //
+    // c1.make
+    //
+    // Car.prototype.break=false;
+    //
+    // c1.break;
+    //
+    // v1.break;
 
-    function Vehicle(){}
 
-    Car.prototype=Object.create(Vehicle.prototype);
 
-    Car.prototype.constructor=Car;
+    // the above concept also can be implemented using classes also
+    class Vehicle{
+        constructor(make,year) {
+            this.make=make;
+            this.year=year;
+        }
+    }
 
-    Vehicle.prototype.make="Toyota"
+    // Inherit the properties of Vehicle
+    class Car extends Vehicle{
+        constructor(make,year) {
+            super(make,year);
+        }
+    }
 
-    var v1= new Vehicle();
 
-    v1.make;
+    let c= new Car("BMW","2022");
+    c.make; // BMW
+    c.year; //Year
+    //Both inherited from Vehicle
 
-    var c1= new Car();
 
-    c1.make
 
-    Car.prototype.break=false;
 
-    c1.break;
 
-    v1.break;
+
+
 
 
 
