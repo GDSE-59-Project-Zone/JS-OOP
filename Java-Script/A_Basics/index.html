@@ -1001,7 +1001,7 @@
     Vehicle.prototype.model="BMW";
     // 'BMW'
 
-    Vehicle.prototype.year=2022
+    Vehicle.prototype.year=2022;
     // 2022
     v1.model
     // 'BMW'
@@ -1022,6 +1022,54 @@
     // 'BMW'
     c2.year
     // 2022
+
+
+
+
+    //Inheritance In proper way using prototypes
+    function Vehicle(){
+    }
+
+    function Car(){
+
+    }
+
+    //Adding properties for super function vehicle
+    Vehicle.prototype.model="Benz";
+    Vehicle.prototype.year=2022
+
+    var v1= new Vehicle();
+
+    //create new object for prototype under the Vehicle prototype
+    Car.prototype=Object.create(Vehicle.prototype);
+    Car.prototype.constructor=Car; // give it the qualities of a real prototype
+
+
+    Car.prototype.__proto__==Vehicle.prototype; // check prototype position
+
+    var cc= new Car();
+
+    //Check inheritance
+    Vehicle.prototype.applyHorn=function(){
+        console.log("DDDD")
+    }
+    var v1= new Vehicle();
+    v1.applyHorn();
+
+
+    //creating a car object and check inherited method work or not
+    var c1= new Car();
+    c1.applyHorn();
+
+
+    //Reverse Test
+    Car.prototype.break=false;
+
+    v1.break;// this should be undefined
+
+
+
+
 
 
 
