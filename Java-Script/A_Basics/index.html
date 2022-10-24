@@ -992,6 +992,38 @@
     //Function
 
 
+    function Vehicle(){}
+
+    function Car(){}
+
+    var v1= new Vehicle();
+
+    Vehicle.prototype.model="BMW";
+    // 'BMW'
+
+    Vehicle.prototype.year=2022
+    // 2022
+    v1.model
+    // 'BMW'
+    v1.year
+    // 2022
+    var c1= new Car();
+
+    console.dir(Car.prototype);
+
+
+    Car.prototype=Vehicle.prototype;
+
+    console.dir(Car.prototype);
+
+    var c2= new Car();
+
+    c2.model
+    // 'BMW'
+    c2.year
+    // 2022
+
+
 
 
 
