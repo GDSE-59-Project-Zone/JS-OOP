@@ -34,7 +34,7 @@
                     <input type="color" class="form-control" id="txtColor">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Add To Que</button>
+                <button type="button" id="btnQue" class="btn btn-primary">Add To Que</button>
             </form>
         </div>
     </div>
@@ -77,6 +77,14 @@
 
 
     setInterval(renderDivs,500);
+
+
+    $("#btnQue").click(function (){
+       let inputName= $("#txtName").val();
+       let selectedColor= $("#txtColor").val();
+       var person={name:inputName,color:selectedColor};
+       cueData.persons.unshift(person);
+    });
 </script>
 </body>
 </html>
