@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS QUE</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #container{
+            display: flex;
+        }
+        #container>div{
+            width: 120px;
+            height: 90px;
+            border: 1px solid black;
+        }
+        #container>div>h1{
+            font-size: 20px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--for the form section-->
+<section class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-5">
+            <form>
+                <div class="mb-3">
+                    <label  class="form-label">Name</label>
+                    <input type="text" class="form-control" id="txtName">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Color</label>
+                    <input type="color" class="form-control" id="txtColor">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add To Que</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!--for the que process-->
+<main class="container-fluid">
+    <section id="container" class="mt-5">
+        <div>
+            <h1>Kasun</h1>
+        </div>
+        <div>
+            <h1>Kasun</h1>
+        </div>
+        <div>
+            <h1>Kasun</h1>
+        </div>
+    </section>
+</main>
+
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>

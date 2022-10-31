@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/H_DocumentVsWindow/H_DocumentVsWindow.iml" filepath="$PROJECT_DIR$/H_DocumentVsWindow/H_DocumentVsWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/I_Validation/I_Validation.iml" filepath="$PROJECT_DIR$/I_Validation/I_Validation.iml" />
       <module fileurl="file://$PROJECT_DIR$/J-TImers/J-TImers.iml" filepath="$PROJECT_DIR$/J-TImers/J-TImers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/K-QueProcess.iml" filepath="$PROJECT_DIR$/K-QueProcess.iml" />
     </modules>
   </component>
 </project>
