@@ -66,8 +66,8 @@
 </section>
 
 <section id="btnContainer">
-    <button>Start</button>
-    <button>End</button>
+    <button id="btnStart">Start</button>
+    <button id="btnEnd">End</button>
 </section>
 
 
@@ -98,7 +98,6 @@
                 }
                 this.temArray=this.rightColorArray;
                 this.animateRight();
-
             }
         }
     }
@@ -113,7 +112,21 @@
         knightRider.animate();
     }
 
-    setInterval(renderDivs, 90);
+    var id=setInterval(renderDivs, 90);
+
+
+    $("#btnStart").click(function (){
+        clearInterval(id);
+        id=setInterval(renderDivs, 90);
+        console.log("ID when Start btn Called",id)
+    });
+
+    $("#btnEnd").click(function (){
+        clearInterval(id);
+        console.log("ID when End Btn Called",id)
+    });
+
+
 </script>
 </body>
 </html>
